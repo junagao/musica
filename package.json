@@ -1,0 +1,13 @@
+{
+  "name": "itunes-search",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Juliane Nagao <julianens@gmail.com> (http://junagao.com)",
+  "license": "MIT",
+  "repository": "https://github.com/junagao/itunes-search.git",
+  "keywords": [
+    "react",
+    "iTunes",
+    "search"
+  ]
+}
