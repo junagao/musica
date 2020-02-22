@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import { getAlbums as getAlbumsAction } from '../actions/albums';
 
 import SearchContainer from './SearchContainer';
+import AlbumsList from '../components/AlbumsList';
+import NoAlbum from '../components/NoAlbum';
 
 class App extends React.Component {
   handleSearch = (term) => {
@@ -14,20 +16,45 @@ class App extends React.Component {
   };
 
   render() {
+    const { data, loading, error } = this.props;
+
     return (
       <div className="container">
         <SearchContainer onSearch={this.handleSearch} />
+        {loading && <p>Loading...</p>}
+        {error && (
+          <div style={{ color: 'red' }}>
+            The following unexpected error ocurred: {error}
+          </div>
+        )}
+        {data && data.length ? <AlbumsList albums={data} /> : <NoAlbum />}
       </div>
     );
   }
 }
 
 App.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.number,
+      artwork: PropTypes.string,
+      artist: PropTypes.string,
+      album: PropTypes.string,
+    }),
+  ).isRequired,
+  error: PropTypes.string.isRequired,
+  loading: PropTypes.bool.isRequired,
   getAlbums: PropTypes.func.isRequired,
 };
+
+const mapStateToProps = (state) => ({
+  data: state.albums.data,
+  loading: state.albums.loading,
+  error: state.albums.error,
+});
 
 const mapDispatchToProps = {
   getAlbums: getAlbumsAction,
 };
 
-export default hot(connect(null, mapDispatchToProps)(App));
+export default hot(connect(mapStateToProps, mapDispatchToProps)(App));
