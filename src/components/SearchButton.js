@@ -1,5 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { IoIosSearch } from 'react-icons/io';
 
-const SearchButton = () => <button type="submit">search</button>;
+import Loading from './Loading';
+import './SearchButton.scss';
+
+const SearchButton = ({ loading }) => {
+  return loading ? (
+    <Loading />
+  ) : (
+    <button type="submit" className="search-button">
+      <IoIosSearch />
+    </button>
+  );
+};
+
+SearchButton.propTypes = {
+  loading: PropTypes.bool.isRequired,
+};
 
 export default SearchButton;
