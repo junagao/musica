@@ -3,10 +3,13 @@ import PropTypes from 'prop-types';
 
 import AlbumItem from './AlbumItem';
 
+import './AlbumsList.scss';
+
 const AlbumsList = ({ albums }) => {
   return (
-    <div>
-      <ul className="album-list">
+    <div className="albums-list-container">
+      <h2>Albums</h2>
+      <ul className="albums-list">
         {albums.map((album) => {
           const {
             collectionId,
@@ -31,7 +34,6 @@ const AlbumsList = ({ albums }) => {
 AlbumsList.propTypes = {
   albums: PropTypes.arrayOf(
     PropTypes.shape({
-      key: PropTypes.number,
       artwork: PropTypes.string,
       artist: PropTypes.string,
       album: PropTypes.string,

@@ -1,0 +1,32 @@
+@import '../devices';
+
+.container {
+  margin: 0 auto;
+  max-width: 22rem;
+  overflow: hidden;
+  padding: 0.5rem;
+  @media (min-width: $mobileL) {
+    max-width: 38rem;
+  }
+  @media (min-width: $tabletP) {
+    max-width: 44rem;
+  }
+  @media (min-width: $tabletL) {
+    max-width: 56rem;
+  }
+  @media (min-width: $laptop) {
+    max-width: 64rem;
+  }
+  @media (min-width: $desktop) {
+    max-width: 72rem;
+  }
+  @media (min-width: $desktopHD) {
+    max-width: 92rem;
+  }
+}
+
+.error-message {
+  color: #e53e3e;
+  font-size: 1.25rem;
+  padding: 2rem 0rem;
+}

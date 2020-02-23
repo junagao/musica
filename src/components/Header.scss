@@ -1,0 +1,14 @@
+@import '../devices';
+@import '../variables';
+
+h1 {
+  color: $color-h1;
+  font-size: 4.5rem;
+  font-weight: $font-weight-h1;
+  @media (min-width: $mobileL) {
+    font-size: 5rem;
+  }
+  @media (min-width: $tabletP) {
+    font-size: 5.5rem;
+  }
+}

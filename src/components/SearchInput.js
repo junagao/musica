@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './SearchInput.scss';
+
 const SearchInput = ({ onSearchTermChange }) => (
   <label className="search-field" htmlFor="search">
     <input
@@ -8,6 +10,7 @@ const SearchInput = ({ onSearchTermChange }) => (
       onChange={onSearchTermChange}
       name="search"
       placeholder="Search"
+      className="search-input"
     />
   </label>
 );
