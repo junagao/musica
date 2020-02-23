@@ -1,8 +1,9 @@
-$font-family-base: 'Roboto', sans-serif;
-$font-size-base: 16px;
+@import './variables';
 
 html {
   box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   font-size: $font-size-base;
 }
 
@@ -10,11 +11,14 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   margin: 0;
   padding: 0;
+  background-color: $background-color-base;
   font-family: $font-family-base;
 }
 
@@ -26,4 +30,11 @@ ul {
 img {
   max-width: 100%;
   height: auto;
+}
+
+a {
+  text-decoration: none;
+  &:visited {
+    color: $color-main;
+  }
 }

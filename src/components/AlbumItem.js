@@ -1,17 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const AlbumItem = ({ artwork, artist, album }) => (
+import './AlbumItem.scss';
+
+const AlbumItem = ({ artist, artwork, album }) => (
   <li className="album-item">
-    <img src={artwork} alt="" />
-    <p>{artist}</p>
-    <p>{album}</p>
+    <img src={artwork.replace('100x100', '200x200')} alt="" />
+    <div className="album-details">
+      <p className="album-title">{album}</p>
+      <p className="album-artist">{artist}</p>
+    </div>
   </li>
 );
 
 AlbumItem.propTypes = {
-  artwork: PropTypes.string.isRequired,
   artist: PropTypes.string.isRequired,
+  artwork: PropTypes.string.isRequired,
   album: PropTypes.string.isRequired,
 };
 

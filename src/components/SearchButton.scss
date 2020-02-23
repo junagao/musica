@@ -1,0 +1,17 @@
+@import '../variables';
+
+.search-button {
+  background-color: $color-main;
+  border-radius: 0.5rem;
+  border: none;
+  color: $color-icon;
+  cursor: pointer;
+  font-size: 2.5rem;
+  outline: none;
+  padding: 0.4rem 0.3rem 0rem 0.3rem;
+  width: 54px;
+  height: 54px;
+  &:hover {
+    background-color: $color-darker;
+  }
+}

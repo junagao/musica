@@ -1,0 +1,20 @@
+.search-input {
+  color: #553c9a;
+  border: 1px solid #553c9a;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  padding: 0.75rem;
+  width: 17rem;
+  -webkit-appearance: none;
+  &:focus {
+    color: #553c9a;
+    background-color: #faf5ff;
+    border: 1px solid #553c9a;
+    box-shadow: 0 1px 1px 0 #e9d8fd, 0 1px 1px 0 #d6bcfa;
+    outline: none;
+  }
+  &::-webkit-input-placeholder {
+    color: #d0bfe4;
+  }
+}

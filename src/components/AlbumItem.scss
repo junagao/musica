@@ -1,0 +1,40 @@
+@import '../variables';
+
+.album-item {
+  border-radius: 0.25rem;
+  border: 1px solid transparent;
+  width: 150px;
+  animation: fadeIn 1s;
+}
+
+img {
+  border-radius: 0.25rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  width: 100%;
+}
+
+.album-details {
+  padding: 0.25rem 0rem;
+}
+
+.album-title {
+  color: $color-album-title;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.album-artist {
+  color: $color-album-artist;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -4,9 +4,12 @@ import { hot } from 'react-hot-loader/root';
 import { connect } from 'react-redux';
 import { getAlbums as getAlbumsAction } from '../actions/albums';
 
+import Header from '../components/Header';
 import SearchContainer from './SearchContainer';
 import AlbumsList from '../components/AlbumsList';
 import NoAlbum from '../components/NoAlbum';
+
+import './App.scss';
 
 class App extends React.Component {
   handleSearch = (term) => {
@@ -20,11 +23,11 @@ class App extends React.Component {
 
     return (
       <div className="container">
-        <SearchContainer onSearch={this.handleSearch} />
-        {loading && <p>Loading...</p>}
+        <Header />
+        <SearchContainer onSearch={this.handleSearch} loading={loading} />
         {error && (
-          <div style={{ color: 'red' }}>
-            The following unexpected error ocurred: {error}
+          <div className="error-message">
+            <p>The following unexpected error ocurred: {error}</p>
           </div>
         )}
         {data && data.length ? <AlbumsList albums={data} /> : <NoAlbum />}
