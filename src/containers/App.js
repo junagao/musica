@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import SearchContainer from './SearchContainer';
 import AlbumsList from '../components/AlbumsList';
 import NoAlbum from '../components/NoAlbum';
+import ErrorMessage from '../components/ErrorMessage';
 
 import './App.scss';
 
@@ -40,11 +41,7 @@ class App extends React.Component {
       <div className="container">
         <Header />
         <SearchContainer onSearch={this.handleSearch} loading={loading} />
-        {error && (
-          <div className="error-message">
-            <p>The following unexpected error ocurred: {error}</p>
-          </div>
-        )}
+        {error && <ErrorMessage error={error} />}
         {data && data.length ? (
           <AlbumsList albums={data} onChangeView={this.handleChangeView} />
         ) : (

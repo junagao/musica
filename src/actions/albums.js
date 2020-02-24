@@ -17,7 +17,7 @@ export const getAlbumsSuccess = (albums) => ({
 
 export const getAlbumsError = (error) => ({
   type: GET_ALBUMS_ERROR,
-  error,
+  error: error.message,
 });
 
 export const getAlbums = (term, limit = 20) => async (dispatch) => {
