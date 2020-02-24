@@ -6,6 +6,7 @@
         "useBuiltIns": "usage",
         "corejs": "3",
         "targets": {
+          "node": "current",
           "browsers": ["last 2 versions", "not dead", "ie >= 8"]
         }
       }
