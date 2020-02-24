@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './AlbumItem.scss';
 
 const AlbumItem = ({ artist, artwork, album }) => (
-  <li className="album-item">
+  <li className="album-item grid">
     <img src={artwork.replace('100x100', '200x200')} alt="" />
     <div className="album-details">
       <p className="album-title">{album}</p>

@@ -2,8 +2,6 @@
 
 .album-item {
   border-radius: 0.25rem;
-  border: 1px solid transparent;
-  width: 150px;
   animation: fadeIn 1s;
 }
 
@@ -11,11 +9,6 @@ img {
   border-radius: 0.25rem;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
     0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  width: 100%;
-}
-
-.album-details {
-  padding: 0.25rem 0rem;
 }
 
 .album-title {
@@ -28,6 +21,39 @@ img {
   color: $color-album-artist;
   font-size: 0.85rem;
   font-weight: 400;
+}
+
+.grid {
+  width: 100%;
+  img {
+    width: 150px;
+    transition: all ease-in 0.1s;
+    @media (min-width: $desktopHD) {
+      width: 175px;
+    }
+  }
+  .album-details {
+    padding: 0.25rem 0rem;
+  }
+  @media (min-width: $desktopHD) {
+    img {
+      width: 175px;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  img {
+    width: 100px;
+    transition: all ease-in 0.1s;
+  }
+  .album-details {
+    padding: 0.25rem 1rem;
+  }
 }
 
 @keyframes fadeIn {

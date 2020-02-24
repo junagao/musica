@@ -18,6 +18,21 @@ class App extends React.Component {
     getAlbums(term);
   };
 
+  handleChangeView = (type) => {
+    const albumListContainer = document.getElementsByClassName(
+      'albums-list',
+    )[0];
+    const albumItens = document.getElementsByClassName('album-item');
+
+    if (type === 'list') {
+      albumListContainer.classList.replace('grid', 'list');
+      albumItens.forEach((i) => i.classList.replace('grid', 'list'));
+    } else {
+      albumListContainer.classList.replace('list', 'grid');
+      albumItens.forEach((i) => i.classList.replace('list', 'grid'));
+    }
+  };
+
   render() {
     const { data, loading, error } = this.props;
 
@@ -30,7 +45,11 @@ class App extends React.Component {
             <p>The following unexpected error ocurred: {error}</p>
           </div>
         )}
-        {data && data.length ? <AlbumsList albums={data} /> : <NoAlbum />}
+        {data && data.length ? (
+          <AlbumsList albums={data} onChangeView={this.handleChangeView} />
+        ) : (
+          <NoAlbum />
+        )}
       </div>
     );
   }
