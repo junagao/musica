@@ -1,12 +1,13 @@
 module.exports = {
   verbose: true,
-  setupFilesAfterEnv: ['<rootDir>src/__tests__/setup/setupEnzyme.js'],
+  setupFilesAfterEnv: ['<rootDir>src/setupEnzyme.js'],
   transform: {
     '^.+\\.js$': 'babel-jest',
   },
   moduleNameMapper: {
     '\\.scss$': 'identity-obj-proxy',
   },
+  snapshotSerializers: ['enzyme-to-json/serializer'],
   collectCoverageFrom: [
     './src/**/*.js',
     '**/*.{js,jsx}',
