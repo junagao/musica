@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FaThList, FaThLarge } from 'react-icons/fa';
 
 import AlbumItem from './AlbumItem';
+import ViewTypeButton from './ViewTypeButton';
 
 import './AlbumsList.scss';
 
@@ -12,20 +13,16 @@ const AlbumsList = ({ albums, onChangeView }) => {
       <div className="albums-list-header">
         <h2>Albums</h2>
         <div className="view-type-container">
-          <button
-            type="button"
-            className="view-btn"
-            onClick={() => onChangeView('list')}
-          >
-            <FaThList />
-          </button>
-          <button
-            type="button"
-            className="view-btn"
-            onClick={() => onChangeView('grid')}
-          >
-            <FaThLarge />
-          </button>
+          <ViewTypeButton
+            onChangeView={onChangeView}
+            viewType="list"
+            icon={<FaThList />}
+          />
+          <ViewTypeButton
+            onChangeView={onChangeView}
+            viewType="grid"
+            icon={<FaThLarge />}
+          />
         </div>
       </div>
 
