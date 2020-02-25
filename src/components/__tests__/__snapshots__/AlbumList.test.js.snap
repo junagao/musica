@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlbumList should render correctly given the required props 1`] = `
+<div
+  className="albums-list-container"
+>
+  <div
+    className="albums-list-header"
+  >
+    <h2>
+      Albums
+    </h2>
+    <div
+      className="view-type-container"
+    >
+      <ViewTypeButton
+        icon={<FaThList />}
+        onChangeView={[MockFunction]}
+        viewType="list"
+      />
+      <ViewTypeButton
+        icon={<FaThLarge />}
+        onChangeView={[MockFunction]}
+        viewType="grid"
+      />
+    </div>
+  </div>
+  <ul
+    className="albums-list grid"
+  >
+    <AlbumItem
+      album="Awake"
+      artist="Tycho"
+      artwork="https://is4-ssl.mzstatic.com/image/thumb/Music/v4/b9/76/bc/b976bc5d-2c25-d79d-4057-67bc47b4ab6d/source/100x100bb.jpg"
+      key="793928184"
+    />
+    <AlbumItem
+      album="Weather"
+      artist="Tycho"
+      artwork="https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/a9/bf/0c/a9bf0c63-fb1d-b3ee-315f-40d829f0159c/source/100x100bb.jpg"
+      key="1461523692"
+    />
+  </ul>
+</div>
+`;
