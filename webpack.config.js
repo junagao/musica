@@ -32,7 +32,10 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
-    alias: { 'react-dom': '@hot-loader/react-dom' },
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
   },
   devServer: {
     contentBase: './dist',

@@ -6,6 +6,7 @@
         "useBuiltIns": "usage",
         "corejs": "3",
         "targets": {
+          "node": "current",
           "browsers": ["last 2 versions", "not dead", "ie >= 8"]
         }
       }
@@ -14,6 +15,12 @@
   ],
   "plugins": [
     "react-hot-loader/babel",
-    ["@babel/plugin-proposal-class-properties", { "loose": true }]
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    [
+      "module-resolver",
+      {
+        "root": ["./src"]
+      }
+    ]
   ]
 }
