@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ViewTypeButton should render correctly given the required props 1`] = `
+<button
+  className="view-btn"
+  onClick={[Function]}
+  type="button"
+>
+  <FaThList />
+</button>
+`;

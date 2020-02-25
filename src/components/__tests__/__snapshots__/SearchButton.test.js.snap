@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchButton should render correctly given the required props 1`] = `
+<button
+  className="search-button"
+  type="submit"
+>
+  <IoIosSearch />
+</button>
+`;
