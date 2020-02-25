@@ -28,7 +28,7 @@ export const getAlbums = (term, limit = 20) => async (dispatch) => {
     );
     dispatch(getAlbumsSuccess(response.data.results));
   } catch (e) {
-    dispatch(getAlbumsError(e));
+    dispatch(getAlbumsError(e.message));
   }
 };
 
