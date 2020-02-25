@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlbumItem should render correctly given the required props 1`] = `
+<li
+  className="album-item grid"
+>
+  <img
+    alt=""
+    src="https://is4-ssl.mzstatic.com/image/thumb/Music/v4/b9/76/bc/b976bc5d-2c25-d79d-4057-67bc47b4ab6d/source/200x200bb.jpg"
+  />
+  <div
+    className="album-details"
+  >
+    <p
+      className="album-title"
+    >
+      Awake
+    </p>
+    <p
+      className="album-artist"
+    >
+      Tycho
+    </p>
+  </div>
+</li>
+`;
