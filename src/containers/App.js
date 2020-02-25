@@ -60,16 +60,21 @@ App.propTypes = {
       artist: PropTypes.string,
       album: PropTypes.string,
     }),
-  ).isRequired,
-  error: PropTypes.string.isRequired,
+  ),
+  error: PropTypes.string,
   loading: PropTypes.bool.isRequired,
   getAlbums: PropTypes.func.isRequired,
+};
+
+App.defaultProps = {
+  data: [],
+  error: '',
 };
 
 const mapStateToProps = (state) => ({
   data: state.albums.data,
   loading: state.albums.loading,
-  error: state.albums.error,
+  error: state.albums.error.message,
 });
 
 const mapDispatchToProps = {

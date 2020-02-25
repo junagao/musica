@@ -5,7 +5,7 @@ import './ErrorMessage.scss';
 
 const ErrorMessage = ({ error }) => (
   <div className="error-message">
-    <p>The following unexpected error ocurred: {error}</p>
+    <p>The following unexpected error occurred: {error}</p>
   </div>
 );
 
