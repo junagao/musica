@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './ViewTypeButton.scss';
+
 const ViewTypeButton = ({ onChangeView, viewType, icon }) => (
   <button
     type="button"
