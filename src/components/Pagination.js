@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './Pagination.scss';
+
 const Pagination = ({ albumsPerPage, totalAlbums, onChangePage }) => {
   const pageNumbers = [];
 
