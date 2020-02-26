@@ -13,6 +13,9 @@ exports[`App should render correctly 1`] = `
   }
 >
   <App
+    albumsPerPage={20}
+    changeCurrentPage={[Function]}
+    currentPage={1}
     data={
       Array [
         Object {
@@ -50,8 +53,8 @@ exports[`App should render correctly 1`] = `
       </Header>
       <SearchContainer
         loading={false}
-        noResults={false}
         onSearch={[Function]}
+        s={true}
       >
         <form
           className="search-form"
@@ -291,6 +294,32 @@ exports[`App should render correctly 1`] = `
           </ul>
         </div>
       </AlbumsList>
+      <Pagination
+        albumsPerPage={20}
+        onChangePage={[Function]}
+        totalAlbums={2}
+      >
+        <div>
+          <nav>
+            <ul
+              className="pagination"
+            >
+              <li
+                className="page-item"
+                key="1"
+              >
+                <a
+                  className="page-link"
+                  href="#1"
+                  onClick={[Function]}
+                >
+                  1
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </Pagination>
     </div>
   </App>
 </Provider>

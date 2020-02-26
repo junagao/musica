@@ -3,7 +3,7 @@ import {
   GET_ALBUMS_REQUEST,
   GET_ALBUMS_SUCCESS,
   GET_ALBUMS_ERROR,
-  NO_RESULTS,
+  NO_RESULTS_FOUND,
 } from 'actions/types';
 
 describe('albums reducer', () => {
@@ -101,7 +101,7 @@ describe('albums reducer', () => {
 
   it('should handle NO_RESULTS', () => {
     const action = {
-      type: NO_RESULTS,
+      type: NO_RESULTS_FOUND,
     };
 
     const expectedState = {

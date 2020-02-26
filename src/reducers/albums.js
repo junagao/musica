@@ -2,7 +2,7 @@ import {
   GET_ALBUMS_REQUEST,
   GET_ALBUMS_SUCCESS,
   GET_ALBUMS_ERROR,
-  NO_RESULTS,
+  NO_RESULTS_FOUND,
 } from '../actions/types';
 
 const initialState = {
@@ -35,7 +35,7 @@ export default (state = initialState, action) => {
         error: action.error,
         noResults: false,
       };
-    case NO_RESULTS:
+    case NO_RESULTS_FOUND:
       return {
         ...state,
         noResults: true,

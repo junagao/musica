@@ -8,7 +8,7 @@ import {
   GET_ALBUMS_REQUEST,
   GET_ALBUMS_SUCCESS,
   GET_ALBUMS_ERROR,
-  NO_RESULTS,
+  NO_RESULTS_FOUND,
 } from 'actions/types';
 
 describe('getAlbumsRequest', () => {
@@ -87,7 +87,7 @@ describe('noResultsFound', () => {
   it('has the correct type', () => {
     const action = noResultsFound();
 
-    expect(action.type).toEqual(NO_RESULTS);
+    expect(action.type).toEqual(NO_RESULTS_FOUND);
   });
 
   it('had the correct payload', () => {
