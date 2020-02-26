@@ -15,8 +15,9 @@ import './App.scss';
 
 export class App extends React.Component {
   handleSearch = (term) => {
-    const { getAlbums } = this.props;
+    const { getAlbums, changeCurrentPage } = this.props;
 
+    changeCurrentPage(1);
     getAlbums(term);
   };
 
