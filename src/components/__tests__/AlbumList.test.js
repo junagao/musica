@@ -4,6 +4,7 @@ import { shallow } from 'enzyme';
 import AlbumsList from 'components/AlbumsList';
 import ViewTypeButton from 'components/ViewTypeButton';
 import AlbumItem from 'components/AlbumItem';
+import NoAlbum from 'components/NoAlbum';
 
 describe('AlbumList', () => {
   let wrapper;
@@ -25,7 +26,9 @@ describe('AlbumList', () => {
   ];
 
   beforeEach(() => {
-    wrapper = shallow(<AlbumsList albums={albums} onChangeView={jest.fn()} />);
+    wrapper = shallow(
+      <AlbumsList albums={albums} onChangeView={jest.fn()} noResults={false} />,
+    );
   });
 
   it('should render correctly given the required props', () => {
@@ -81,5 +84,10 @@ describe('AlbumList', () => {
 
   it('should render two instances of <AlbumItem />', () => {
     expect(wrapper.find(AlbumItem).length).toEqual(2);
+  });
+
+  it('should render NoAlbum if no search results is found', () => {
+    wrapper.setProps({ noResults: true });
+    expect(wrapper.find(NoAlbum).length).toEqual(1);
   });
 });

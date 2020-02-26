@@ -3,6 +3,7 @@ import {
   GET_ALBUMS_REQUEST,
   GET_ALBUMS_SUCCESS,
   GET_ALBUMS_ERROR,
+  NO_RESULTS,
 } from 'actions/types';
 
 describe('albums reducer', () => {
@@ -13,6 +14,7 @@ describe('albums reducer', () => {
       data: [],
       loading: false,
       error: '',
+      noResults: false,
     };
   });
 
@@ -29,6 +31,7 @@ describe('albums reducer', () => {
       data: [],
       loading: true,
       error: '',
+      noResults: false,
     };
 
     expect(albumsReducer(initialState, action)).toEqual(expectedState);
@@ -74,6 +77,7 @@ describe('albums reducer', () => {
       ],
       loading: false,
       error: '',
+      noResults: false,
     };
 
     expect(albumsReducer(initialState, action)).toEqual(expectedState);
@@ -89,6 +93,22 @@ describe('albums reducer', () => {
       data: [],
       loading: false,
       error: 'Error Fetching Albums!',
+      noResults: false,
+    };
+
+    expect(albumsReducer(initialState, action)).toEqual(expectedState);
+  });
+
+  it('should handle NO_RESULTS', () => {
+    const action = {
+      type: NO_RESULTS,
+    };
+
+    const expectedState = {
+      data: [],
+      loading: false,
+      error: '',
+      noResults: true,
     };
 
     expect(albumsReducer(initialState, action)).toEqual(expectedState);

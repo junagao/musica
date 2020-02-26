@@ -2,11 +2,13 @@ import {
   getAlbumsRequest,
   getAlbumsSuccess,
   getAlbumsError,
+  noResultsFound,
 } from 'actions/albums';
 import {
   GET_ALBUMS_REQUEST,
   GET_ALBUMS_SUCCESS,
   GET_ALBUMS_ERROR,
+  NO_RESULTS,
 } from 'actions/types';
 
 describe('getAlbumsRequest', () => {
@@ -64,5 +66,33 @@ describe('getAlbumsError', () => {
     const action = getAlbumsError('An unexpected error ocurred!');
 
     expect(action.error).toEqual('An unexpected error ocurred!');
+  });
+});
+
+describe('getAlbumsError', () => {
+  it('has the correct type', () => {
+    const action = getAlbumsError();
+
+    expect(action.type).toEqual(GET_ALBUMS_ERROR);
+  });
+
+  it('has the correct payload', () => {
+    const action = getAlbumsError('An unexpected error ocurred!');
+
+    expect(action.error).toEqual('An unexpected error ocurred!');
+  });
+});
+
+describe('noResultsFound', () => {
+  it('has the correct type', () => {
+    const action = noResultsFound();
+
+    expect(action.type).toEqual(NO_RESULTS);
+  });
+
+  it('had the correct payload', () => {
+    const action = noResultsFound();
+
+    expect(action.payload).toEqual();
   });
 });
