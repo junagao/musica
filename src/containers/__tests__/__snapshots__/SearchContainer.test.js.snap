@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchContainer should render correctly given the required props 1`] = `
+<form
+  className="search-form"
+  onSubmit={[Function]}
+>
+  <SearchInput
+    onSearchTermChange={[Function]}
+  />
+  <Loading />
+</form>
+`;
