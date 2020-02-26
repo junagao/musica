@@ -4,7 +4,7 @@ import {
   GET_ALBUMS_REQUEST,
   GET_ALBUMS_SUCCESS,
   GET_ALBUMS_ERROR,
-  NO_RESULTS,
+  NO_RESULTS_FOUND,
 } from './types';
 
 export const getAlbumsRequest = () => ({
@@ -17,7 +17,7 @@ export const getAlbumsSuccess = (albums) => ({
 });
 
 export const noResultsFound = () => ({
-  type: NO_RESULTS,
+  type: NO_RESULTS_FOUND,
 });
 
 export const getAlbumsError = (error) => ({

@@ -4,6 +4,6 @@ exports[`NoAlbum should render correctly 1`] = `
 <div
   className="no-album"
 >
-  Sorry, no album found.
+  Sorry, no albums match your search.
 </div>
 `;
