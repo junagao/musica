@@ -39,11 +39,7 @@ export class App extends React.Component {
     return (
       <div className="container">
         <Header />
-        <SearchContainer
-          onSearch={this.handleSearch}
-          loading={loading}
-          noResults={noResults}
-        />
+        <SearchContainer onSearch={this.handleSearch} loading={loading} s />
         {error && <ErrorMessage error={error} />}
         {!error && data.length ? (
           <AlbumsList
