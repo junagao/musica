@@ -12,7 +12,7 @@ import ErrorMessage from '../components/ErrorMessage';
 
 import './App.scss';
 
-class App extends React.Component {
+export class App extends React.Component {
   handleSearch = (term) => {
     const { getAlbums } = this.props;
 
@@ -42,7 +42,7 @@ class App extends React.Component {
         <Header />
         <SearchContainer onSearch={this.handleSearch} loading={loading} />
         {error && <ErrorMessage error={error} />}
-        {data && data.length ? (
+        {!error && data.length ? (
           <AlbumsList albums={data} onChangeView={this.handleChangeView} />
         ) : (
           <NoAlbum />
@@ -63,12 +63,13 @@ App.propTypes = {
   ),
   error: PropTypes.string,
   loading: PropTypes.bool.isRequired,
-  getAlbums: PropTypes.func.isRequired,
+  getAlbums: PropTypes.func,
 };
 
 App.defaultProps = {
   data: [],
   error: '',
+  getAlbums: () => {},
 };
 
 const mapStateToProps = (state) => ({
@@ -81,4 +82,6 @@ const mapDispatchToProps = {
   getAlbums: getAlbumsAction,
 };
 
-export default hot(connect(mapStateToProps, mapDispatchToProps)(App));
+export const connectedApp = hot(
+  connect(mapStateToProps, mapDispatchToProps)(App),
+);

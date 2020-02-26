@@ -2,8 +2,6 @@ import React from 'react';
 
 import './NoAlbum.scss';
 
-const NoAlbum = () => (
-  <div className="no-album">Sorry, no albums match your search.</div>
-);
+const NoAlbum = () => <div className="no-album">Sorry, no album found.</div>;
 
 export default NoAlbum;
