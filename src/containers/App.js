@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader/root';
 import { connect } from 'react-redux';
 import { getAlbums as getAlbumsAction } from '../actions/albums';
+import changeCurrentPageAction from '../actions/pagination';
 
 import Header from '../components/Header';
 import SearchContainer from './SearchContainer';
 import AlbumsList from '../components/AlbumsList';
 import ErrorMessage from '../components/ErrorMessage';
+import Pagination from '../components/Pagination';
 
 import './App.scss';
 
@@ -33,8 +35,21 @@ export class App extends React.Component {
     }
   };
 
+  getCurrentAlbums = (albums) => {
+    const { currentPage, albumsPerPage } = this.props;
+    const indexOfLastAlbum = currentPage * albumsPerPage;
+    const indexOfFirstAlbum = indexOfLastAlbum - albumsPerPage;
+    return albums.slice(indexOfFirstAlbum, indexOfLastAlbum);
+  };
+
+  handleChangePage = (pageNumber) => {
+    const { changeCurrentPage } = this.props;
+
+    changeCurrentPage(pageNumber);
+  };
+
   render() {
-    const { data, loading, error, noResults } = this.props;
+    const { data, loading, error, noResults, albumsPerPage } = this.props;
 
     return (
       <div className="container">
@@ -42,11 +57,20 @@ export class App extends React.Component {
         <SearchContainer onSearch={this.handleSearch} loading={loading} s />
         {error && <ErrorMessage error={error} />}
         {!error && data.length ? (
-          <AlbumsList
-            albums={data}
-            onChangeView={this.handleChangeView}
-            noResults={noResults}
-          />
+          <>
+            <AlbumsList
+              albums={this.getCurrentAlbums(data)}
+              onChangeView={this.handleChangeView}
+              noResults={noResults}
+            />
+            {!noResults && (
+              <Pagination
+                albumsPerPage={albumsPerPage}
+                totalAlbums={data.length}
+                onChangePage={this.handleChangePage}
+              />
+            )}
+          </>
         ) : null}
       </div>
     );
@@ -66,6 +90,9 @@ App.propTypes = {
   loading: PropTypes.bool.isRequired,
   getAlbums: PropTypes.func,
   noResults: PropTypes.bool,
+  albumsPerPage: PropTypes.number,
+  currentPage: PropTypes.number,
+  changeCurrentPage: PropTypes.func,
 };
 
 App.defaultProps = {
@@ -73,6 +100,9 @@ App.defaultProps = {
   error: '',
   getAlbums: () => {},
   noResults: false,
+  albumsPerPage: 20,
+  currentPage: 1,
+  changeCurrentPage: () => {},
 };
 
 const mapStateToProps = (state) => ({
@@ -80,10 +110,12 @@ const mapStateToProps = (state) => ({
   loading: state.albums.loading,
   error: state.albums.error.message,
   noResults: state.albums.noResults,
+  currentPage: state.page.currentPage,
 });
 
 const mapDispatchToProps = {
   getAlbums: getAlbumsAction,
+  changeCurrentPage: changeCurrentPageAction,
 };
 
 export const connectedApp = hot(

@@ -25,12 +25,10 @@ export const getAlbumsError = (error) => ({
   error,
 });
 
-export const getAlbums = (term, limit = 20) => async (dispatch) => {
+export const getAlbums = (term) => async (dispatch) => {
   dispatch(getAlbumsRequest());
   try {
-    const response = await api.get(
-      `?media=music&entity=album&term=${term}&limit=${limit}`,
-    );
+    const response = await api.get(`?media=music&entity=album&term=${term}`);
     if (response.data.resultCount === 0) {
       dispatch(noResultsFound());
     } else {
