@@ -2,6 +2,10 @@
 
 musica is an app that allows you to search iTunes for music and view albums as the results.
 
+## 👀 Preview
+
+![musica-png](./musica-preview.png)
+
 ## 🚀 Quick start
 
 1. Download the project and cd into it:
