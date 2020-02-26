@@ -7,7 +7,6 @@ import { getAlbums as getAlbumsAction } from '../actions/albums';
 import Header from '../components/Header';
 import SearchContainer from './SearchContainer';
 import AlbumsList from '../components/AlbumsList';
-import NoAlbum from '../components/NoAlbum';
 import ErrorMessage from '../components/ErrorMessage';
 
 import './App.scss';
@@ -35,18 +34,24 @@ export class App extends React.Component {
   };
 
   render() {
-    const { data, loading, error } = this.props;
+    const { data, loading, error, noResults } = this.props;
 
     return (
       <div className="container">
         <Header />
-        <SearchContainer onSearch={this.handleSearch} loading={loading} />
+        <SearchContainer
+          onSearch={this.handleSearch}
+          loading={loading}
+          noResults={noResults}
+        />
         {error && <ErrorMessage error={error} />}
         {!error && data.length ? (
-          <AlbumsList albums={data} onChangeView={this.handleChangeView} />
-        ) : (
-          <NoAlbum />
-        )}
+          <AlbumsList
+            albums={data}
+            onChangeView={this.handleChangeView}
+            noResults={noResults}
+          />
+        ) : null}
       </div>
     );
   }
@@ -64,18 +69,21 @@ App.propTypes = {
   error: PropTypes.string,
   loading: PropTypes.bool.isRequired,
   getAlbums: PropTypes.func,
+  noResults: PropTypes.bool,
 };
 
 App.defaultProps = {
   data: [],
   error: '',
   getAlbums: () => {},
+  noResults: false,
 };
 
 const mapStateToProps = (state) => ({
   data: state.albums.data,
   loading: state.albums.loading,
   error: state.albums.error.message,
+  noResults: state.albums.noResults,
 });
 
 const mapDispatchToProps = {
