@@ -4,11 +4,14 @@ import { FaThList, FaThLarge } from 'react-icons/fa';
 
 import AlbumItem from './AlbumItem';
 import ViewTypeButton from './ViewTypeButton';
+import NoAlbum from './NoAlbum';
 
 import './AlbumsList.scss';
 
-const AlbumsList = ({ albums, onChangeView }) => {
-  return (
+const AlbumsList = ({ albums, onChangeView, noResults }) =>
+  noResults ? (
+    <NoAlbum />
+  ) : (
     <div className="albums-list-container">
       <div className="albums-list-header">
         <h2>Albums</h2>
@@ -46,7 +49,6 @@ const AlbumsList = ({ albums, onChangeView }) => {
       </ul>
     </div>
   );
-};
 
 AlbumsList.propTypes = {
   albums: PropTypes.arrayOf(
@@ -57,6 +59,11 @@ AlbumsList.propTypes = {
     }),
   ).isRequired,
   onChangeView: PropTypes.func.isRequired,
+  noResults: PropTypes.bool,
+};
+
+AlbumsList.defaultProps = {
+  noResults: false,
 };
 
 export default AlbumsList;
