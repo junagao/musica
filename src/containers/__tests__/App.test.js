@@ -7,7 +7,6 @@ import { App } from 'containers/App';
 import Header from 'components/Header';
 import SearchContainer from 'containers/SearchContainer';
 import AlbumsList from 'components/AlbumsList';
-import NoAlbum from 'components/NoAlbum';
 
 describe('App', () => {
   let wrapper;
@@ -68,15 +67,5 @@ describe('App', () => {
 
   it('shows a AlbumsList if theres data', () => {
     expect(wrapper.find(AlbumsList).length).toEqual(1);
-  });
-
-  it('shows a NoAlbum if theres no data', () => {
-    const mockAlbums = [];
-    wrapper = mount(
-      <Provider store={store}>
-        <App data={mockAlbums} loading={false} error="" />
-      </Provider>,
-    );
-    expect(wrapper.find(NoAlbum).length).toEqual(1);
   });
 });
