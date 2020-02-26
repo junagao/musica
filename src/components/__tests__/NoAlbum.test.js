@@ -20,8 +20,6 @@ describe('NoAlbum', () => {
   });
 
   it('should render the error message', () => {
-    expect(wrapper.find('div').text()).toEqual(
-      'Sorry, no albums match your search.',
-    );
+    expect(wrapper.find('div').text()).toEqual('Sorry, no album found.');
   });
 });

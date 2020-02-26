@@ -3,34 +3,35 @@ import { mount } from 'enzyme';
 import { Provider } from 'react-redux';
 
 import store from 'store';
-import App from 'containers/App';
+import { App } from 'containers/App';
 import Header from 'components/Header';
 import SearchContainer from 'containers/SearchContainer';
+import AlbumsList from 'components/AlbumsList';
+import NoAlbum from 'components/NoAlbum';
 
 describe('App', () => {
   let wrapper;
 
-  const mockAlbums = [
-    {
-      collectionId: 793928184,
-      artistName: 'Tycho',
-      collectionName: 'Awake',
-      artworkUrl100:
-        'https://is4-ssl.mzstatic.com/image/thumb/Music/v4/b9/76/bc/b976bc5d-2c25-d79d-4057-67bc47b4ab6d/source/100x100bb.jpg',
-    },
-    {
-      collectionId: 1461523692,
-      artistName: 'Tycho',
-      collectionName: 'Weather',
-      artworkUrl100:
-        'https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/a9/bf/0c/a9bf0c63-fb1d-b3ee-315f-40d829f0159c/source/100x100bb.jpg',
-    },
-  ];
-
   beforeEach(() => {
+    const mockAlbums = [
+      {
+        collectionId: 793928184,
+        artistName: 'Tycho',
+        collectionName: 'Awake',
+        artworkUrl100:
+          'https://is4-ssl.mzstatic.com/image/thumb/Music/v4/b9/76/bc/b976bc5d-2c25-d79d-4057-67bc47b4ab6d/source/100x100bb.jpg',
+      },
+      {
+        collectionId: 1461523692,
+        artistName: 'Tycho',
+        collectionName: 'Weather',
+        artworkUrl100:
+          'https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/a9/bf/0c/a9bf0c63-fb1d-b3ee-315f-40d829f0159c/source/100x100bb.jpg',
+      },
+    ];
     wrapper = mount(
       <Provider store={store}>
-        <App data={mockAlbums} loading={false} error="ERROR" />
+        <App data={mockAlbums} loading={false} error="" />
       </Provider>,
     );
   });
@@ -44,7 +45,6 @@ describe('App', () => {
   });
 
   it('renders one div with className `container`', () => {
-    expect(wrapper.find('div').length).toEqual(2);
     expect(
       wrapper
         .find('div')
@@ -59,5 +59,24 @@ describe('App', () => {
 
   it('shows a SearchContainer', () => {
     expect(wrapper.find(SearchContainer).length).toEqual(1);
+  });
+
+  it('shows a ErrorMessage if theres an error', () => {
+    wrapper.setProps({ error: 'ERROR' });
+    expect(wrapper.find(SearchContainer).length).toEqual(1);
+  });
+
+  it('shows a AlbumsList if theres data', () => {
+    expect(wrapper.find(AlbumsList).length).toEqual(1);
+  });
+
+  it('shows a NoAlbum if theres no data', () => {
+    const mockAlbums = [];
+    wrapper = mount(
+      <Provider store={store}>
+        <App data={mockAlbums} loading={false} error="" />
+      </Provider>,
+    );
+    expect(wrapper.find(NoAlbum).length).toEqual(1);
   });
 });
