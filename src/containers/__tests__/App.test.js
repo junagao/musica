@@ -7,6 +7,7 @@ import { App } from 'containers/App';
 import Header from 'components/Header';
 import SearchContainer from 'containers/SearchContainer';
 import AlbumsList from 'components/AlbumsList';
+import Pagination from 'components/Pagination';
 
 describe('App', () => {
   let wrapper;
@@ -60,12 +61,17 @@ describe('App', () => {
     expect(wrapper.find(SearchContainer).length).toEqual(1);
   });
 
-  it('shows a ErrorMessage if theres an error', () => {
+  it('shows an ErrorMessage if theres an error', () => {
     wrapper.setProps({ error: 'ERROR' });
     expect(wrapper.find(SearchContainer).length).toEqual(1);
   });
 
-  it('shows a AlbumsList if theres data', () => {
+  it('shows am AlbumsList if theres data', () => {
     expect(wrapper.find(AlbumsList).length).toEqual(1);
+  });
+
+  it('shows a Pagination under AlbumsList if there are results in the page', () => {
+    wrapper.setProps({ noResults: false });
+    expect(wrapper.find(Pagination).length).toEqual(1);
   });
 });
