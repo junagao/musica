@@ -12,7 +12,7 @@ exports[`App should render correctly 1`] = `
     }
   }
 >
-  <Connect(App)
+  <App
     data={
       Array [
         Object {
@@ -29,100 +29,266 @@ exports[`App should render correctly 1`] = `
         },
       ]
     }
-    error="ERROR"
+    error=""
+    getAlbums={[Function]}
     loading={false}
   >
-    <App
-      data={Array []}
-      error=""
-      getAlbums={[Function]}
-      loading={false}
+    <div
+      className="container"
     >
-      <div
-        className="container"
-      >
-        <Header>
-          <header>
-            <h1>
-              <a
-                href="/"
-              >
-                musica
-              </a>
-            </h1>
-          </header>
-        </Header>
-        <SearchContainer
-          loading={false}
-          onSearch={[Function]}
-        >
-          <form
-            className="search-form"
-            onSubmit={[Function]}
-          >
-            <SearchInput
-              onSearchTermChange={[Function]}
+      <Header>
+        <header>
+          <h1>
+            <a
+              href="/"
             >
-              <label
-                className="search-field"
-                htmlFor="search"
-              >
-                <input
-                  className="search-input"
-                  name="search"
-                  onChange={[Function]}
-                  placeholder="Search"
-                  type="search"
-                />
-              </label>
-            </SearchInput>
-            <SearchButton>
-              <button
-                className="search-button"
-                type="submit"
-              >
-                <IoIosSearch>
-                  <IconBase
-                    attr={
+              musica
+            </a>
+          </h1>
+        </header>
+      </Header>
+      <SearchContainer
+        loading={false}
+        onSearch={[Function]}
+      >
+        <form
+          className="search-form"
+          onSubmit={[Function]}
+        >
+          <SearchInput
+            onSearchTermChange={[Function]}
+          >
+            <label
+              className="search-field"
+              htmlFor="search"
+            >
+              <input
+                className="search-input"
+                name="search"
+                onChange={[Function]}
+                placeholder="Search"
+                type="search"
+              />
+            </label>
+          </SearchInput>
+          <SearchButton>
+            <button
+              className="search-button"
+              type="submit"
+            >
+              <IoIosSearch>
+                <IconBase
+                  attr={
+                    Object {
+                      "viewBox": "0 0 512 512",
+                    }
+                  }
+                >
+                  <svg
+                    fill="currentColor"
+                    height="1em"
+                    stroke="currentColor"
+                    strokeWidth="0"
+                    style={
                       Object {
-                        "viewBox": "0 0 512 512",
+                        "color": undefined,
                       }
                     }
+                    viewBox="0 0 512 512"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      fill="currentColor"
-                      height="1em"
-                      stroke="currentColor"
-                      strokeWidth="0"
-                      style={
+                    <path
+                      d="M443.5 420.2L336.7 312.4c20.9-26.2 33.5-59.4 33.5-95.5 0-84.5-68.5-153-153.1-153S64 132.5 64 217s68.5 153 153.1 153c36.6 0 70.1-12.8 96.5-34.2l106.1 107.1c3.2 3.4 7.6 5.1 11.9 5.1 4.1 0 8.2-1.5 11.3-4.5 6.6-6.3 6.8-16.7.6-23.3zm-226.4-83.1c-32.1 0-62.3-12.5-85-35.2-22.7-22.7-35.2-52.9-35.2-84.9 0-32.1 12.5-62.3 35.2-84.9 22.7-22.7 52.9-35.2 85-35.2s62.3 12.5 85 35.2c22.7 22.7 35.2 52.9 35.2 84.9 0 32.1-12.5 62.3-35.2 84.9-22.7 22.7-52.9 35.2-85 35.2z"
+                      key="0"
+                    />
+                  </svg>
+                </IconBase>
+              </IoIosSearch>
+            </button>
+          </SearchButton>
+        </form>
+      </SearchContainer>
+      <AlbumsList
+        albums={
+          Array [
+            Object {
+              "artistName": "Tycho",
+              "artworkUrl100": "https://is4-ssl.mzstatic.com/image/thumb/Music/v4/b9/76/bc/b976bc5d-2c25-d79d-4057-67bc47b4ab6d/source/100x100bb.jpg",
+              "collectionId": 793928184,
+              "collectionName": "Awake",
+            },
+            Object {
+              "artistName": "Tycho",
+              "artworkUrl100": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/a9/bf/0c/a9bf0c63-fb1d-b3ee-315f-40d829f0159c/source/100x100bb.jpg",
+              "collectionId": 1461523692,
+              "collectionName": "Weather",
+            },
+          ]
+        }
+        onChangeView={[Function]}
+      >
+        <div
+          className="albums-list-container"
+        >
+          <div
+            className="albums-list-header"
+          >
+            <h2>
+              Albums
+            </h2>
+            <div
+              className="view-type-container"
+            >
+              <ViewTypeButton
+                icon={<FaThList />}
+                onChangeView={[Function]}
+                viewType="list"
+              >
+                <button
+                  className="view-btn"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <FaThList>
+                    <IconBase
+                      attr={
                         Object {
-                          "color": undefined,
+                          "viewBox": "0 0 512 512",
                         }
                       }
-                      viewBox="0 0 512 512"
-                      width="1em"
-                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path
-                        d="M443.5 420.2L336.7 312.4c20.9-26.2 33.5-59.4 33.5-95.5 0-84.5-68.5-153-153.1-153S64 132.5 64 217s68.5 153 153.1 153c36.6 0 70.1-12.8 96.5-34.2l106.1 107.1c3.2 3.4 7.6 5.1 11.9 5.1 4.1 0 8.2-1.5 11.3-4.5 6.6-6.3 6.8-16.7.6-23.3zm-226.4-83.1c-32.1 0-62.3-12.5-85-35.2-22.7-22.7-35.2-52.9-35.2-84.9 0-32.1 12.5-62.3 35.2-84.9 22.7-22.7 52.9-35.2 85-35.2s62.3 12.5 85 35.2c22.7 22.7 35.2 52.9 35.2 84.9 0 32.1-12.5 62.3-35.2 84.9-22.7 22.7-52.9 35.2-85 35.2z"
-                        key="0"
-                      />
-                    </svg>
-                  </IconBase>
-                </IoIosSearch>
-              </button>
-            </SearchButton>
-          </form>
-        </SearchContainer>
-        <NoAlbum>
-          <div
-            className="no-album"
-          >
-            Sorry, no albums match your search.
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 512 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M149.333 216v80c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24v-80c0-13.255 10.745-24 24-24h101.333c13.255 0 24 10.745 24 24zM0 376v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zM125.333 32H24C10.745 32 0 42.745 0 56v80c0 13.255 10.745 24 24 24h101.333c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zm80 448H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24zm-24-424v80c0 13.255 10.745 24 24 24H488c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24zm24 264H488c13.255 0 24-10.745 24-24v-80c0-13.255-10.745-24-24-24H205.333c-13.255 0-24 10.745-24 24v80c0 13.255 10.745 24 24 24z"
+                          key="0"
+                        />
+                      </svg>
+                    </IconBase>
+                  </FaThList>
+                </button>
+              </ViewTypeButton>
+              <ViewTypeButton
+                icon={<FaThLarge />}
+                onChangeView={[Function]}
+                viewType="grid"
+              >
+                <button
+                  className="view-btn"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <FaThLarge>
+                    <IconBase
+                      attr={
+                        Object {
+                          "viewBox": "0 0 512 512",
+                        }
+                      }
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        strokeWidth="0"
+                        style={
+                          Object {
+                            "color": undefined,
+                          }
+                        }
+                        viewBox="0 0 512 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z"
+                          key="0"
+                        />
+                      </svg>
+                    </IconBase>
+                  </FaThLarge>
+                </button>
+              </ViewTypeButton>
+            </div>
           </div>
-        </NoAlbum>
-      </div>
-    </App>
-  </Connect(App)>
+          <ul
+            className="albums-list grid"
+          >
+            <AlbumItem
+              album="Awake"
+              artist="Tycho"
+              artwork="https://is4-ssl.mzstatic.com/image/thumb/Music/v4/b9/76/bc/b976bc5d-2c25-d79d-4057-67bc47b4ab6d/source/100x100bb.jpg"
+              key="793928184"
+            >
+              <li
+                className="album-item grid"
+              >
+                <img
+                  alt=""
+                  src="https://is4-ssl.mzstatic.com/image/thumb/Music/v4/b9/76/bc/b976bc5d-2c25-d79d-4057-67bc47b4ab6d/source/200x200bb.jpg"
+                />
+                <div
+                  className="album-details"
+                >
+                  <p
+                    className="album-title"
+                  >
+                    Awake
+                  </p>
+                  <p
+                    className="album-artist"
+                  >
+                    Tycho
+                  </p>
+                </div>
+              </li>
+            </AlbumItem>
+            <AlbumItem
+              album="Weather"
+              artist="Tycho"
+              artwork="https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/a9/bf/0c/a9bf0c63-fb1d-b3ee-315f-40d829f0159c/source/100x100bb.jpg"
+              key="1461523692"
+            >
+              <li
+                className="album-item grid"
+              >
+                <img
+                  alt=""
+                  src="https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/a9/bf/0c/a9bf0c63-fb1d-b3ee-315f-40d829f0159c/source/200x200bb.jpg"
+                />
+                <div
+                  className="album-details"
+                >
+                  <p
+                    className="album-title"
+                  >
+                    Weather
+                  </p>
+                  <p
+                    className="album-artist"
+                  >
+                    Tycho
+                  </p>
+                </div>
+              </li>
+            </AlbumItem>
+          </ul>
+        </div>
+      </AlbumsList>
+    </div>
+  </App>
 </Provider>
 `;
