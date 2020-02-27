@@ -4,6 +4,8 @@ musica is an app that allows you to search iTunes for music and view albums as t
 
 ## 👀 Preview
 
+https://musica-app.netlify.com/
+
 ![musica-png](./musica-preview.png)
 
 ## 🚀 Quick start
