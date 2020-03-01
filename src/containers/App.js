@@ -26,6 +26,11 @@ export class App extends React.Component {
       'albums-list',
     )[0];
     const albumItens = document.getElementsByClassName('album-item');
+    const listViewBtn = document.getElementsByClassName('list-btn')[0];
+    const gridViewBtn = document.getElementsByClassName('grid-btn')[0];
+
+    listViewBtn.classList.toggle('active');
+    gridViewBtn.classList.toggle('active');
 
     if (type === 'list') {
       albumListContainer.classList.replace('grid', 'list');
