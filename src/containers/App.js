@@ -50,7 +50,14 @@ export class App extends React.Component {
   };
 
   render() {
-    const { data, loading, error, noResults, albumsPerPage } = this.props;
+    const {
+      data,
+      loading,
+      error,
+      noResults,
+      albumsPerPage,
+      currentPage,
+    } = this.props;
 
     return (
       <div className="container">
@@ -66,6 +73,7 @@ export class App extends React.Component {
             />
             {!noResults && (
               <Pagination
+                currentPage={currentPage}
                 albumsPerPage={albumsPerPage}
                 totalAlbums={data.length}
                 onChangePage={this.handleChangePage}

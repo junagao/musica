@@ -10,4 +10,10 @@ h1 {
   @media (min-width: $tabletP) {
     font-size: 5.5rem;
   }
+  & a {
+    color: $color-main;
+    &:visited {
+      color: $color-main;
+    }
+  }
 }
