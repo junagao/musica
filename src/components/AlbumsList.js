@@ -24,6 +24,7 @@ const AlbumsList = ({ albums, onChangeView, noResults }) =>
           <ViewTypeButton
             onChangeView={onChangeView}
             viewType="grid"
+            btState="active"
             icon={<FaThLarge />}
           />
         </div>

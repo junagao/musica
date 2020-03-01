@@ -12,9 +12,12 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   transition: all ease-out 0.3s;
-  &:hover,
-  &:focus {
+  &:hover {
     color: $color-main;
-    transition: all ease-in 0.3s;
   }
+}
+
+.active {
+  color: $color-main;
+  transition: all ease-in 0.3s;
 }
