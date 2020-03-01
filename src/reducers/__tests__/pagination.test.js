@@ -7,6 +7,7 @@ describe('albums reducer', () => {
   beforeEach(() => {
     initialState = {
       currentPage: 1,
+      albumsPerPage: 20,
     };
   });
 
@@ -22,6 +23,7 @@ describe('albums reducer', () => {
 
     const expectedState = {
       currentPage: 2,
+      albumsPerPage: 20,
     };
 
     expect(paginationReducer(initialState, action)).toEqual(expectedState);

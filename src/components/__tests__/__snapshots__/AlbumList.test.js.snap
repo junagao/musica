@@ -14,11 +14,13 @@ exports[`AlbumList should render correctly given the required props 1`] = `
       className="view-type-container"
     >
       <ViewTypeButton
+        btState=""
         icon={<FaThList />}
         onChangeView={[MockFunction]}
         viewType="list"
       />
       <ViewTypeButton
+        btState="active"
         icon={<FaThLarge />}
         onChangeView={[MockFunction]}
         viewType="grid"
