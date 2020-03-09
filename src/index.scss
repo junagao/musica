@@ -33,5 +33,9 @@ img {
 }
 
 a {
+  color: $color-main;
   text-decoration: none;
+  &:visited {
+    color: $color-main;
+  }
 }
