@@ -6,74 +6,102 @@ exports[`Pagination should render correctly 1`] = `
     <ul
       className="pagination"
     >
-      <PaginationItem
-        btState="disabled"
-        itemName={<PreviousPageButton />}
-        onChangePage={[Function]}
-        pageNumber={0}
-      />
-      <PaginationItem
-        btState="active"
-        itemName={1}
+      <li
+        className="page-item"
         key="1"
-        onChangePage={[MockFunction]}
-        pageNumber={1}
-      />
-      <PaginationItem
-        btState=""
-        itemName={2}
+      >
+        <a
+          className="page-link"
+          href="#1"
+          onClick={[Function]}
+        >
+          1
+        </a>
+      </li>
+      <li
+        className="page-item"
         key="2"
-        onChangePage={[MockFunction]}
-        pageNumber={2}
-      />
-      <PaginationItem
-        btState=""
-        itemName={3}
+      >
+        <a
+          className="page-link"
+          href="#2"
+          onClick={[Function]}
+        >
+          2
+        </a>
+      </li>
+      <li
+        className="page-item"
         key="3"
-        onChangePage={[MockFunction]}
-        pageNumber={3}
-      />
-      <PaginationItem
-        btState=""
-        itemName={4}
+      >
+        <a
+          className="page-link"
+          href="#3"
+          onClick={[Function]}
+        >
+          3
+        </a>
+      </li>
+      <li
+        className="page-item"
         key="4"
-        onChangePage={[MockFunction]}
-        pageNumber={4}
-      />
-      <PaginationItem
-        btState=""
-        itemName={5}
+      >
+        <a
+          className="page-link"
+          href="#4"
+          onClick={[Function]}
+        >
+          4
+        </a>
+      </li>
+      <li
+        className="page-item"
         key="5"
-        onChangePage={[MockFunction]}
-        pageNumber={5}
-      />
-      <PaginationItem
-        btState=""
-        itemName={6}
+      >
+        <a
+          className="page-link"
+          href="#5"
+          onClick={[Function]}
+        >
+          5
+        </a>
+      </li>
+      <li
+        className="page-item"
         key="6"
-        onChangePage={[MockFunction]}
-        pageNumber={6}
-      />
-      <PaginationItem
-        btState=""
-        itemName={7}
+      >
+        <a
+          className="page-link"
+          href="#6"
+          onClick={[Function]}
+        >
+          6
+        </a>
+      </li>
+      <li
+        className="page-item"
         key="7"
-        onChangePage={[MockFunction]}
-        pageNumber={7}
-      />
-      <PaginationItem
-        btState=""
-        itemName={8}
+      >
+        <a
+          className="page-link"
+          href="#7"
+          onClick={[Function]}
+        >
+          7
+        </a>
+      </li>
+      <li
+        className="page-item"
         key="8"
-        onChangePage={[MockFunction]}
-        pageNumber={8}
-      />
-      <PaginationItem
-        btState=""
-        itemName={<NextPageButton />}
-        onChangePage={[MockFunction]}
-        pageNumber={2}
-      />
+      >
+        <a
+          className="page-link"
+          href="#8"
+          onClick={[Function]}
+        >
+          8
+        </a>
+      </li>
     </ul>
   </nav>
 </div>

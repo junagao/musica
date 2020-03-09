@@ -298,10 +298,30 @@ exports[`App should render correctly 1`] = `
       </AlbumsList>
       <Pagination
         albumsPerPage={20}
-        currentPage={1}
         onChangePage={[Function]}
         totalAlbums={2}
-      />
+      >
+        <div>
+          <nav>
+            <ul
+              className="pagination"
+            >
+              <li
+                className="page-item"
+                key="1"
+              >
+                <a
+                  className="page-link"
+                  href="#1"
+                  onClick={[Function]}
+                >
+                  1
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </Pagination>
     </div>
   </App>
 </Provider>

@@ -1,8 +1,32 @@
+@import '../variables';
+
 .pagination {
   display: flex;
   margin-bottom: 2.5rem;
 }
 
-.arrow {
-  margin-top: 0.45rem;
+.page-link {
+  margin-right: 0.25rem;
+  border-radius: 0.25rem;
+  border: 1px solid $color-lighter;
+  vertical-align: middle;
+  outline: none;
+  cursor: pointer;
+  min-width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  transition: all ease-out 0.3s;
+  font-size: 1rem;
+  display: block;
+  &:hover {
+    color: #fff;
+    border: 1px solid $color-main;
+    background-color: $color-main;
+    transition: all ease-in 0.3s;
+  }
+  &:focus {
+    color: #fff;
+    background-color: $color-main;
+  }
 }
