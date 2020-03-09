@@ -2,7 +2,7 @@
 
 exports[`ViewTypeButton should render correctly given the required props 1`] = `
 <button
-  className="view-btn"
+  className="view-btn list-btn "
   onClick={[Function]}
   type="button"
 >

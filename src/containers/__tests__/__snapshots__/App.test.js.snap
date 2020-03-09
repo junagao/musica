@@ -147,12 +147,13 @@ exports[`App should render correctly 1`] = `
               className="view-type-container"
             >
               <ViewTypeButton
+                btState=""
                 icon={<FaThList />}
                 onChangeView={[Function]}
                 viewType="list"
               >
                 <button
-                  className="view-btn"
+                  className="view-btn list-btn "
                   onClick={[Function]}
                   type="button"
                 >
@@ -188,12 +189,13 @@ exports[`App should render correctly 1`] = `
                 </button>
               </ViewTypeButton>
               <ViewTypeButton
+                btState="active"
                 icon={<FaThLarge />}
                 onChangeView={[Function]}
                 viewType="grid"
               >
                 <button
-                  className="view-btn"
+                  className="view-btn grid-btn active"
                   onClick={[Function]}
                   type="button"
                 >
@@ -296,30 +298,10 @@ exports[`App should render correctly 1`] = `
       </AlbumsList>
       <Pagination
         albumsPerPage={20}
+        currentPage={1}
         onChangePage={[Function]}
         totalAlbums={2}
-      >
-        <div>
-          <nav>
-            <ul
-              className="pagination"
-            >
-              <li
-                className="page-item"
-                key="1"
-              >
-                <a
-                  className="page-link"
-                  href="#1"
-                  onClick={[Function]}
-                >
-                  1
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </Pagination>
+      />
     </div>
   </App>
 </Provider>
